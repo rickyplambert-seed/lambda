@@ -1,0 +1,95 @@
+{
+  "id": 20616952,
+  "name": "Node operator",
+  "target": "branch",
+  "source_type": "Repository",
+  "source": "Advanced-intelligence-with-operator/lambert.js",
+  "enforcement": "disabled",
+  "conditions": {
+    "ref_name": {
+      "exclude": [],
+      "include": [
+        "refs/heads/James_anthony_lambert"
+      ]
+    }
+  },
+  "rules": [
+    {
+      "type": "deletion"
+    },
+    {
+      "type": "non_fast_forward"
+    },
+    {
+      "type": "creation"
+    },
+    {
+      "type": "update"
+    },
+    {
+      "type": "required_linear_history"
+    },
+    {
+      "type": "required_deployments",
+      "parameters": {
+        "required_deployment_environments": []
+      }
+    },
+    {
+      "type": "merge_queue",
+      "parameters": {
+        "merge_method": "MERGE",
+        "max_entries_to_build": 5,
+        "min_entries_to_merge": 1,
+        "max_entries_to_merge": 5,
+        "min_entries_to_merge_wait_minutes": 5,
+        "grouping_strategy": "ALLGREEN",
+        "check_response_timeout_minutes": 60
+      }
+    },
+    {
+      "type": "required_status_checks",
+      "parameters": {
+        "strict_required_status_checks_policy": true,
+        "do_not_enforce_on_create": false,
+        "required_status_checks": [
+          {
+            "context": "James_anthony_lambert"
+          }
+        ]
+      }
+    },
+    {
+      "type": "commit_author_email_pattern",
+      "parameters": {
+        "operator": "starts_with",
+        "pattern": "rickyplambert57 ",
+        "negate": false,
+        "name": ""
+      }
+    },
+    {
+      "type": "code_coverage",
+      "parameters": {
+        "minimum_coverage": null,
+        "max_coverage_drop": null
+      }
+    },
+    {
+      "type": "branch_name_pattern",
+      "parameters": {
+        "operator": "starts_with",
+        "pattern": "Artificial intelligence ",
+        "negate": false,
+        "name": "Branch must be theough james_anthony_lambert "
+      }
+    }
+  ],
+  "bypass_actors": [
+    {
+      "actor_id": null,
+      "actor_type": "OrganizationAdmin",
+      "bypass_mode": "always"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+name: AI Deployment to Server
+
+on:
+  push:
+    branches: 
+      - trixie292206021957 
+
+jobs:
+  job_one:
+    name: AI Deployment
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Remote SSH Deployment
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.MYFIN_SSH_HOST }}
+          username: ${{ secrets.DEEPMIND_RICKYLAMBERT_GEMINI }}
+          key: ${{ secrets.ROOT_06021957 }}
+          port: 22
+          script: |
+            ./update_ai_w3_react.sh
+|
+          ./update_ai_w3_react.sh
+        
+
+
